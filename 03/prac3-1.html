@@ -9,7 +9,15 @@
     <script type="text/javascript" src="../jquery.min.js"></script>
 
     <script>
+        var numbers = [];
         function runButtonPressed() {
+            createRandomNumbers(numbers, 10);
+            var total = 0;
+            for (var i = 0; i < 10; i++) {
+                total = numbers[i] + total;
+            }
+            show(total);
+
             //prac3-1 10個の乱数の合計を求める（繰り返しで）
             //prac3-2 10個の乱数の平均を求める
             //prac3-3 10個の乱数の最大値を求める
