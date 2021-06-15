@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var text = document.getElementById('tf1').value;
+            show(text);
+
+            // var chars = text.split('');
+            // var a = chars[4];
+            // var b = chars[3];
+
+            // chars[4] = chars[0];
+            // chars[3] = chars[1];
+            // chars[1] = b;
+            // chars[0] = a;
+            // show(chars);
+
+            // var text2 = chars.join('');
+            // show(text2);
+
+            var stack = [];
+            var chars = text.split('');
+            for (var i = chars.length - 1; i >= 0; i--) {
+                stack.push(chars[i]);
+            }
+            // stack.push(chars[4]);
+            // stack.push(chars[3]);
+            // stack.push(chars[2]);
+            // stack.push(chars[1]);
+            // stack.push(chars[0]);
+            show(stack);
+
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>split</h1>
+    <input id="tf1" type="text" value="こんにちは">
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
