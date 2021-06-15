@@ -13,7 +13,7 @@
 
             var text = document.getElementById('tf1').value;
             show(text);
-            // var text2 = [];
+
             var stack = [];
             var chars = text.split('');
             for (var i = chars.length - 1; i >= 0; i--) {
@@ -23,11 +23,11 @@
             show(stack);
 
 
-            // text2 = text.split('');
 
 
             if (text == text2) {
-                window.alert('正解');
+                // window.alert('正解');
+                document.getElementById('res').innerHTML = '正解';
             }
             else {
                 window.alert('不正解');
@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <h1>split</h1>
+    <h1>回文判定</h1>
     <input id="tf1" type="text" value="こんにちは">
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
