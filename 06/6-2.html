@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+
+            var text = document.getElementById('tf1').value;
+            show(text);
+            // var text2 = [];
+            var stack = [];
+            var chars = text.split('');
+            for (var i = chars.length - 1; i >= 0; i--) {
+                stack.push(chars[i]);
+            }
+            var text2 = stack.join('');
+            show(stack);
+
+
+            // text2 = text.split('');
+
+
+            if (text == text2) {
+                window.alert('正解');
+            }
+            else {
+                window.alert('不正解');
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>split</h1>
+    <input id="tf1" type="text" value="こんにちは">
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
