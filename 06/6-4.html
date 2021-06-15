@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script type="text/javascript" src="nouns.js"></script>
+    <script type="text/javascript" src="verbs.js"></script>
+
+    <script>
+
+        var nouns;
+        var verbs;
+
+        $(document).ready(function () {
+            nouns = nounstext.split('\n');
+            verbs = verbstext.split('\n');
+        });
+
+        function runButtonPressed() {
+
+            for (var j = 1; j <= 1000000; j++) {
+                var noun = selectone(nouns);
+                // var noun2 = selectone(nouns);
+                var verb = selectone(verbs);
+
+                // var text = document.getElementById('tf1').value;
+                // show(text);
+
+                var stack = [];
+                var chars = noun.split('');
+                for (var i = chars.length - 1; i >= 0; i--) {
+                    stack.push(chars[i]);
+                }
+                var text2 = stack.join('');
+
+
+
+                if (verb == text2) {
+                    document.getElementById('res').innerHTML = noun + 'は' + verb;
+                    console.log(noun);
+                    console.log(verb);
+
+                }
+                // else {
+                //     document.getElementById('res').innerHTML = '不正解';
+                // }
+
+                // show(noun);
+                // show('は')
+                // show(noun2);
+                // show('を');
+                // show(verb);
+
+                // document.getElementById('res').innerHTML = noun + 'は' + verb;
+                // var a = noun + 'は' + verb;
+
+            }
+        }
+
+        function selectone(array) {
+            var size = array.length;
+            var index = Math.floor(Math.random() * size);
+            return array[index];
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>作文回文さん</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+
+</body>
+
+</html>
