@@ -9,17 +9,24 @@
     <script type="text/javascript" src="../jquery.min.js"></script>
 
     <script>
-        var numbers = [];
         function runButtonPressed() {
-
-            createRandomNumbers(numbers, 3);
+            var numbers = [];
+            createOrderedRandomNumbers(numbers, 20);
             show(numbers);
-            //合計を求める
-            var total = 0;
-            total = total + numbers[0];
-            total = total + numbers[1];
-            total = total + numbers[2];
-            show(total);
+        }
+
+        //この関数を，aaandd.jsに加えてください．
+        function createOrderedRandomNumbers(numbers, n) {
+            var count = 0;
+            for (var i = 1; ; i++) {
+                if (Math.floor(Math.random() * 3) == 0) {
+                    numbers.push(i);
+                    count++;
+                    if (count >= n) {
+                        break;
+                    }
+                }
+            }
         }
 
         //配列以外の変数を表示するために，aaandd.jsの中身を新しいshowに置き換えてください．
