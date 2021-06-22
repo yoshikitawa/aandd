@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var meibo = {};
+
+        // $().ready(function () {
+        //     fruits['apple'] = 'りんご';
+        //     fruits['orange'] = 'みかん';
+        // });
+
+        function registerButtonPressed() {
+            var x = document.getElementById('tf3').value;
+            var y = document.getElementById('tf4').value;
+            meibo[x] = y;
+            var a = document.getElementById('tf3').value;
+            var b = document.getElementById('tf4').value;
+            meibo[b] = a;
+            console.log(meibo);
+        }
+        // var nasi = '';
+        function runButtonPressed() {
+            var namae = document.getElementById('tf2').value;
+            var birthday = meibo[namae];
+
+            document.getElementById('tf1').value = birthday;
+
+            var batsu = document.getElementById('tf1').value;
+            if (batsu == 'undefined') {
+                document.getElementById('tf1').value = '見つかりませんでした';
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>登録</h1>
+    名前：<input id="tf3" type="text" value="">
+    <br>
+    誕生日：<input id="tf4" type="text" value="">
+    <button onclick="registerButtonPressed()">登録!</button>
+    <h1>検索</h1>
+    <!-- 英語：<input id="tf1" type="text" value=""> -->
+    <!-- <br> -->
+    <input id="tf2" type="text" value="">
+    <button onclick="runButtonPressed()">検索!</button>
+    <br>
+    <input id="tf1" type="text" value="">
+    <p id="res"></p>
+</body>
+
+</html>
