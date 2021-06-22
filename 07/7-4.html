@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var meibo = {};
+
+        // $().ready(function () {
+        //     fruits['apple'] = 'りんご';
+        //     fruits['orange'] = 'みかん';
+        // });
+
+        var x;
+        function registerButtonPressed() {
+
+            x = document.getElementById('tf1').value;
+            document.getElementById('tf2').value = x + 'の言葉の意味を教えて';
+        }
+
+        function registerButtonPressed2() {
+
+            x = document.getElementById('tf1').value;
+
+            document.getElementById('tf2').value = meibo[x];
+
+
+        }
+
+        function runButtonPressed() {
+            teigi = document.getElementById('tf3').value;
+            meibo[x] = teigi;
+            console.log(meibo);
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>botシステム</h1>
+    あなた：<input id="tf1" type="text" value="">
+    <button onclick="registerButtonPressed()">発言</button>
+    <button onclick="registerButtonPressed2()">確認</button>
+    <br>
+    コンピュータ：<input id="tf2" type="text" value="">
+    <br>
+    <input id="tf3" type="text" value="">
+    <button onclick="runButtonPressed()">教える</button>
+    <br>
+    <p id="res"></p>
+</body>
+
+</html>
